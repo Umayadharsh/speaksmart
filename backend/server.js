@@ -41,18 +41,32 @@ app.use('/api/interview',    require('./src/routes/interview'));
 app.use('/api/user',         require('./src/routes/analytics'));
 app.use('/api/user',         require('./src/routes/language'));
 
+// Root — shows when someone visits the backend URL directly
+app.get('/', (req, res) => {
+  res.json({
+    name: 'SpeakSmart API',
+    status: '🚀 Running',
+    version: '1.0.0',
+    health: '/api/health',
+    env: process.env.NODE_ENV || 'production',
+    docs: 'See README for endpoint documentation',
+  });
+});
+
 // Health check — Render pings this to verify the service is up
 app.get('/api/health', (req, res) => {
   res.json({
-    status: 'SpeakSmart API running',
+    status: 'ok',
+    service: 'SpeakSmart API',
     env: process.env.NODE_ENV,
+    db: 'connected',
     timestamp: new Date().toISOString(),
   });
 });
 
-// 404 fallback for unknown routes
+// 404 fallback for unknown API routes
 app.use((req, res) => {
-  res.status(404).json({ success: false, message: 'Route not found' });
+  res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found` });
 });
 
 // ─── Error Handler ───────────────────────────────────────────────
