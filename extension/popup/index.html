@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeakSmart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">🎯</div>
+        <div>
+          <div class="logo-name">SpeakSmart</div>
+          <div class="logo-sub">AI English Coach</div>
+        </div>
+      </div>
+      <div id="status-badge" class="badge badge-offline">Offline</div>
+    </div>
+
+    <!-- User Info -->
+    <div id="user-section" class="user-card hidden">
+      <div id="user-avatar" class="user-avatar">U</div>
+      <div class="user-info">
+        <div id="user-name" class="user-name">User</div>
+        <div id="user-level" class="user-level">Beginner</div>
+      </div>
+      <div id="user-xp" class="user-xp">⚡ 0</div>
+    </div>
+
+    <!-- Login prompt -->
+    <div id="login-section" class="login-prompt">
+      <div class="login-icon">🔐</div>
+      <div class="login-text">Sign in to use SpeakSmart</div>
+      <button id="open-login-btn" class="btn btn-primary" onclick="openApp('/login')">Open SpeakSmart</button>
+    </div>
+
+    <!-- Language Toggle -->
+    <div id="lang-toggle-section" class="lang-section hidden">
+      <div class="section-label">Language Mode</div>
+      <div class="lang-toggle">
+        <button id="lang-en" class="lang-btn active" onclick="setLanguage('ENGLISH')">🇬🇧 English</button>
+        <button id="lang-ta" class="lang-btn" onclick="setLanguage('TAMIL_ASSISTED')">🌟 Tamil</button>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div id="actions-section" class="actions hidden">
+      <div class="section-label">Quick Actions</div>
+      <button class="action-btn" onclick="openApp('/call')">
+        <span class="action-icon">📞</span>
+        <div class="action-info">
+          <div class="action-title">Start AI Call</div>
+          <div class="action-desc">Real-time voice practice</div>
+        </div>
+        <span class="action-arrow">›</span>
+      </button>
+      <button class="action-btn" onclick="openApp('/')">
+        <span class="action-icon">🔄</span>
+        <div class="action-info">
+          <div class="action-title">Resume Last Session</div>
+          <div class="action-desc">Continue from where you left off</div>
+        </div>
+        <span class="action-arrow">›</span>
+      </button>
+      <button class="action-btn" onclick="openApp('/interview')">
+        <span class="action-icon">🎤</span>
+        <div class="action-info">
+          <div class="action-title">Interview Practice</div>
+          <div class="action-desc">Prepare for your next job</div>
+        </div>
+        <span class="action-arrow">›</span>
+      </button>
+      <button class="action-btn" onclick="openApp('/challenges')">
+        <span class="action-icon">🧠</span>
+        <div class="action-info">
+          <div class="action-title">Speaking Challenge</div>
+          <div class="action-desc">Earn XP with timed topics</div>
+        </div>
+        <span class="action-arrow">›</span>
+      </button>
+    </div>
+
+    <!-- Streak Badge -->
+    <div id="streak-section" class="streak-card hidden">
+      <span>🔥</span>
+      <div id="streak-text">0 day streak</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>SpeakSmart v1.0 • </span>
+      <span id="footer-mode">English Mode</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* SpeakSmart Chrome Extension Popup Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  width: 340px;
+  min-height: 200px;
+  background: #0F172A;
+  color: #E2E8F0;
+  font-size: 13px;
+}
+
+#app { padding: 16px; }
+
+/* Header */
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 14px;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #4A90E2, #00C9FF);
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; font-size: 18px;
+}
+.logo-name { font-weight: 800; font-size: 14px; color: white; }
+.logo-sub { font-size: 10px; color: #64748B; font-weight: 500; }
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; }
+.badge-online { background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid rgba(16,185,129,0.3); }
+.badge-offline { background: rgba(239,68,68,0.15); color: #F87171; border: 1px solid rgba(239,68,68,0.2); }
+
+/* User Card */
+.user-card {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.06); border-radius: 12px;
+  padding: 12px; margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.user-avatar {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #4A90E2, #7C3AED);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-weight: 700; color: white; font-size: 14px;
+  flex-shrink: 0;
+}
+.user-name { font-weight: 700; font-size: 13px; color: white; }
+.user-level { font-size: 10px; color: #94A3B8; margin-top: 2px; }
+.user-xp { margin-left: auto; font-weight: 700; color: #F59E0B; font-size: 12px; }
+
+/* Login Prompt */
+.login-prompt { text-align: center; padding: 20px 0; }
+.login-icon { font-size: 2.5rem; margin-bottom: 8px; }
+.login-text { color: #94A3B8; margin-bottom: 14px; }
+
+/* Buttons */
+.btn { padding: 10px 20px; border: none; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; }
+.btn-primary { background: linear-gradient(135deg, #4A90E2, #00C9FF); color: white; box-shadow: 0 4px 12px rgba(74,144,226,0.4); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(74,144,226,0.6); }
+
+/* Language Section */
+.lang-section { margin-bottom: 12px; }
+.section-label { font-size: 10px; color: #64748B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.lang-toggle { display: flex; gap: 6px; }
+.lang-btn { flex: 1; padding: 8px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: transparent; color: #94A3B8; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.lang-btn.active { background: rgba(74,144,226,0.25); color: #93C5FD; border-color: rgba(74,144,226,0.4); }
+
+/* Actions */
+.actions { margin-bottom: 12px; }
+.action-btn {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 10px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; cursor: pointer;
+  transition: all 0.2s ease; margin-bottom: 6px;
+  color: #E2E8F0; text-align: left;
+}
+.action-btn:hover { background: rgba(74,144,226,0.15); border-color: rgba(74,144,226,0.3); }
+.action-icon { font-size: 1.2rem; flex-shrink: 0; }
+.action-info { flex: 1; }
+.action-title { font-weight: 600; font-size: 12px; color: white; }
+.action-desc { font-size: 10px; color: #64748B; margin-top: 1px; }
+.action-arrow { color: #4A90E2; font-size: 1.2rem; }
+
+/* Streak */
+.streak-card {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 10px; padding: 8px 12px; margin-bottom: 12px;
+  font-size: 12px; color: #F59E0B; font-weight: 600;
+}
+
+/* Footer */
+.footer { text-align: center; color: #334155; font-size: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
+
+/* Utility */
+.hidden { display: none !important; }
